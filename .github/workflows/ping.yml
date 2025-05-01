@@ -1,7 +1,7 @@
 name: Render Keep-Alive (5-Minute Ping)
 on:
   schedule:
-    - cron: '*/5 * * * *'  # Runs every 5 minutes (GitHub's minimum interval)
+    - cron: '*/10 * * * *'  # Runs every 5 minutes (GitHub's minimum interval)
   workflow_dispatch:       # Optional: Manually trigger the job
 
 jobs:
@@ -12,9 +12,6 @@ jobs:
         run: |
           echo "Pinging Render apps to prevent shutdown..."
           curl -s -o /dev/null -w "Portfolio: %{http_code}\n" https://goodluckurom-portfolio-website.onrender.com
-          curl -s -o /dev/null -w "Messenger: %{http_code}\n" https://messenger-app-036l.onrender.com
           curl -s -o /dev/null -w "E-Commerce Backend: %{http_code}\n" https://goodluckurom-ecommerce-backend.onrender.com
           curl -s -o /dev/null -w "E-Commerce Frontend: %{http_code}\n" https://goodluckurom-ecommerce.onrender.com
-          curl -s -o /dev/null -w "Tourism App: %{http_code}\n" https://tourism-app-72xu.onrender.com
-          curl -s -o /dev/null -w "Next.js Starter: %{http_code}\n" https://next-js-starter-kit.onrender.com
           echo "Last ping: $(date)"
