@@ -11,7 +11,7 @@ jobs:
       - name: Ping all Render apps
         run: |
           echo "Pinging Render apps to prevent shutdown..."
-          curl -s -o /dev/null -w "Portfolio: %{http_code}\n" https://goodluckurom-portfolio-website.onrender.com
-          curl -s -o /dev/null -w "E-Commerce Backend: %{http_code}\n" https://goodluckurom-ecommerce-backend.onrender.com
-          curl -s -o /dev/null -w "E-Commerce Frontend: %{http_code}\n" https://goodluckurom-ecommerce.onrender.com
+          # curl -s -o /dev/null -w "Portfolio: %{http_code}\n" https://goodluckurom-portfolio-website.onrender.com
+          # curl -s -o /dev/null -w "E-Commerce Backend: %{http_code}\n" https://goodluckurom-ecommerce-backend.onrender.com
+          # curl -s -o /dev/null -w "E-Commerce Frontend: %{http_code}\n" https://goodluckurom-ecommerce.onrender.com
           echo "Last ping: $(date)"
